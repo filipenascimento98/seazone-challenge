@@ -1,4 +1,4 @@
-from api.data_access.repository_base import RepositoryBase
+from api.data_access.base import RepositoryBase
 from api.models import Reserva
 
 
