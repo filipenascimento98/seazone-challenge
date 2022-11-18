@@ -11,14 +11,18 @@ class ImovelDomain(DomainBase):
             query_params = {"pk": pk}
             imovel = self.repository.obter(query_params=query_params)
         except Exception as e:
-            return {"message": "Não foi possível atualizar o objeto a base de dados.", "status": 400}
+            return {"message": "Objeto não encontrado", "status": 400}
         
-        imovel.limite_hospedes = dados['limite_hospedes']
-        imovel.qtd_banheiro = dados['qtd_banheiro']
-        imovel.permitido_animais = dados['permitido_animais']
-        imovel.valor_limpeza = dados['valor_limpeza']
-        imovel.data_ativacao = dados['data_ativacao']
+        imovel.limite_hospedes = dados.get('limite_hospedes', imovel.limite_hospedes)
+        imovel.qtd_banheiro = dados.get('qtd_banheiro', imovel.qtd_banheiro)
+        imovel.permitido_animais = dados.get('permitido_animais', imovel.permitido_animais)
+        imovel.valor_limpeza = dados.get('valor_limpeza', imovel.valor_limpeza)
+        imovel.data_ativacao = dados.get('data_ativacao', imovel.data_ativacao)
 
-        imovel.save()
+        campos_alterados = []
+        for key in dados:
+            campos_alterados.append(key)
+
+        self.repository.atualizar(imovel, campos_alterados)
         
         return {"message": "Objeto alterado", "status": 200}

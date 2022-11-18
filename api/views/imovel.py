@@ -9,8 +9,6 @@ from api.serializers.imovel import (
 class ImovelView(viewsets.ViewSet):
 
     domain = ImovelDomain()
-    queryset = domain.obter_todos()
-    serializer_class = ImovelInputSerializer
 
     def list(self, request):
         ret = self.domain.listar()
@@ -46,7 +44,9 @@ class ImovelView(viewsets.ViewSet):
         return Response({"message": ret['message']}, status=ret['status'])
 
     def partial_update(self, request, pk=None):
-        pass
+        ret = self.domain.atualizar(pk, request.data)
+
+        return Response({"message": ret['message']}, status=ret['status'])
 
     def destroy(self, request, pk=None):
         ret = self.domain.excluir(pk=pk)
