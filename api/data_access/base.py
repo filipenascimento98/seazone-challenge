@@ -2,7 +2,7 @@ class RepositoryBase:
     def __init__(self, model):
         self.model = model
     
-    def create(self, obj):
+    def criar(self, obj):
         '''
         Realiza a criação de um model
         Args:
@@ -12,7 +12,7 @@ class RepositoryBase:
         '''
         return self.model(**obj)
         
-    def save(self, obj):
+    def salvar(self, obj):
         '''
         Realiza a inserção de um model na base de dados
         Args:
@@ -20,7 +20,7 @@ class RepositoryBase:
         '''
         obj.save()
     
-    def get(self, query_params={}, select_related=[]):
+    def obter(self, query_params={}, select_related=[]):
         '''
         Retorna um único objeto com base nos parâmetros definidos:
         Args:
@@ -33,7 +33,7 @@ class RepositoryBase:
         '''
         return self.model.objects.select_related(*select_related).get(**query_params)
     
-    def get_with_related(self, query_params={}, prefetch_related=[]):
+    def obter_com_referenciados(self, query_params={}, prefetch_related=[]):
         '''
         Retorna um único objeto com base nos parâmetros definidos e seus campos que referenciam
         outros models, caso passe o prefetch_related:
@@ -47,7 +47,7 @@ class RepositoryBase:
         '''
         return self.model.objects.prefetch_related(*prefetch_related).get(**query_params)
 
-    def list(self):
+    def listar(self):
         '''
         Realiza a listagem de dados.
             Returns:
@@ -55,14 +55,25 @@ class RepositoryBase:
         '''
         return self.model.objects.all()
     
-    def update(self, obj, changed_data={}):
+    def atualizar(self, obj, dados_alterados=[]):
         """
         Realiza a alteração parcial dos campos de um objeto via ORM.
         Args:
         - obj: Objeto com as alterações.
-        - changed_data: Dicionário com o campo update_fields e o seu 
+        - dados_alterados: Dicionário com o campo update_fields e o seu 
         valor sendo uma lista indicando os campos alterados
         Returns:
         - obj: Objeto alterado.
         """
-        return obj.save(**changed_data)
+        print("Atualizando o model")
+        return obj.save(update_fields=dados_alterados)
+    
+    def excluir(self, obj):
+        """
+        Realiza a exclusão de um objeto via ORM.
+        Args:
+        - obj: Objeto a ser excluído
+        Returns:
+        - Não há retorno
+        """
+        return obj.delete()

@@ -8,7 +8,7 @@ class ComumInfo(models.Model):
     data_atualizacao = models.DateTimeField("Data de atualização", auto_now=True)
 
     class Meta:
-        abastract = True
+        abstract = True
 
 class Imovel(ComumInfo):
     cd_imovel = models.UUIDField(primary_key=True, default=uuid4)
