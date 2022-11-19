@@ -23,6 +23,8 @@ class ReservaDomain(DomainBase):
             query_params = {"cd_anuncio": dados['anuncio']}
             anuncio = self.anuncio_repository.obter(query_params=query_params)
             dados['anuncio'] = anuncio
+            dados['data_check_in'] = data_check_in.strftime("%Y-%m-%d")
+            dados['data_check_out'] = data_check_out.strftime("%Y-%m-%d")
         except ObjectDoesNotExist as e:
             logging.error(e)
             return ("Anúncio não encontrado", 404)

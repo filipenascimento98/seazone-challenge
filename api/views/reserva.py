@@ -16,7 +16,7 @@ class ReservaView(viewsets.ViewSet):
         if isinstance(ret, tuple):
             return Response({"message": ret[0]}, status=ret[1])
 
-        serializer = ReservaOutputSerializer(data=ret['message'], many=True)
+        serializer = ReservaOutputSerializer(ret['message'], many=True)
 
         return Response(serializer.data, status=ret['status'])
     
@@ -26,7 +26,7 @@ class ReservaView(viewsets.ViewSet):
         if isinstance(ret, tuple):
             return Response({"message": ret[0]}, status=ret[1])
         
-        serializer = ReservaOutputSerializer(data=ret['message'])
+        serializer = ReservaOutputSerializer(ret['message'])
 
         return Response(serializer.data, status=ret['status'])
     
@@ -39,7 +39,7 @@ class ReservaView(viewsets.ViewSet):
         if isinstance(ret, tuple):
             return Response({"message": ret[0]}, status=ret[1])
 
-        return Response(serializer.data, status=ret['status']) 
+        return Response({"message": ret['message']}, status=ret['status']) 
     
     def destroy(self, request, pk=None):
         ret = self.domain.excluir(pk=pk)
