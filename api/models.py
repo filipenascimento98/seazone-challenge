@@ -23,12 +23,12 @@ class Imovel(ComumInfo):
         verbose_name_plural = "Imóveis"
 
 class Anuncio(ComumInfo):
+    cd_anuncio = models.UUIDField(primary_key=True, default=uuid4)
     imovel = models.ForeignKey(
         "Imovel",
         verbose_name="Imóvel",
         related_name="anuncio",
-        on_delete=models.CASCADE,
-        primary_key=True
+        on_delete=models.CASCADE
     )
     nome_plataforma = models.CharField("Nome da plataforma", max_length=200)
     taxa_plataforma = models.FloatField("Taxa da plataforma")

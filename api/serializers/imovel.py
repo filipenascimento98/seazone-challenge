@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from api.models import Imovel
-from api.domain.imovel import ImovelDomain
 
 
 class ImovelOutputSerializer(serializers.ModelSerializer):
