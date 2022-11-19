@@ -9,7 +9,7 @@ class DomainBase:
         try:
             ret = self.repository.listar()
         except ObjectDoesNotExist as e:
-            return {"message": "Objeto não encontrado", "status": 404}
+            return ("Objeto não encontrado", 404)
         
         return {"message": ret, "status": 200}
     
@@ -27,7 +27,7 @@ class DomainBase:
             ret = self.repository.criar(dados)
             self.repository.salvar(ret)
         except Exception as e:
-            return {"message": "Não foi possível adicionar o objeto a base de dados.", "status": 400}
+            return ("Não foi possível adicionar o objeto a base de dados.", 500)
         
         return {"message": ret.pk, "status": 201}
     
@@ -36,10 +36,10 @@ class DomainBase:
             query_params={"pk": pk}
             ret = self.repository.obter(query_params=query_params)
         except ObjectDoesNotExist as e:
-            return {"message": "Objeto não encontrado", "status": 404}
+            return ("Objeto não encontrado", 404)
         try:
             self.repository.excluir(ret)
         except Exception as e:
-            return {"message": "Não foi possível excluir o objeto da base de dados.", "status": 400}
+            return ("Não foi possível excluir o objeto da base de dados.", 500)
         
         return {"message": "Objeto excluído", "status": 204}
