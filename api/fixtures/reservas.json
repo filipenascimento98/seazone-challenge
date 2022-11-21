@@ -1,0 +1,114 @@
+[
+    {
+        "model": "api.reserva",
+        "pk": "08a0ab16-7208-434b-b2c5-f610c6e76e16",
+        "fields": {
+            "anuncio": "b03259be-fe4b-4d31-8bc1-7b808ff255b2",
+            "data_check_in": "2022-11-01",
+            "data_check_out": "2022-11-02",
+            "preco_total": 100,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 25,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+    },
+    {
+        "model": "api.reserva",
+        "pk": "3cb860d1-c59d-46a2-abeb-6dee53840d3b",
+        "fields": {
+            "anuncio": "b03259be-fe4b-4d31-8bc1-7b808ff255b2",
+            "data_check_in": "2022-11-02",
+            "data_check_out": "2022-11-03",
+            "preco_total": 90,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 24,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+    },
+      {
+        "model": "api.reserva",
+        "pk": "bfe500de-4d57-43e2-a64c-ae25a0f84b36",
+        "fields": {
+            "anuncio": "b03259be-fe4b-4d31-8bc1-7b808ff255b2",
+            "data_check_in": "2022-11-03",
+            "data_check_out": "2022-11-04",
+            "preco_total": 80,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 23,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.reserva",
+        "pk": "947f35f9-5445-4958-9cd9-e7762fca7a5f",
+        "fields": {
+            "anuncio": "b03259be-fe4b-4d31-8bc1-7b808ff255b2",
+            "data_check_in": "2022-11-05",
+            "data_check_out": "2022-11-06",
+            "preco_total": 70,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 22,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.reserva",
+        "pk": "7c7d34cd-985d-480e-9f5e-62cac71b66dd",
+        "fields": {
+            "anuncio": "9df8fad4-4890-4c3f-9b65-ab80e9cd1629",
+            "data_check_in": "2022-11-07",
+            "data_check_out": "2022-11-08",
+            "preco_total": 60,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 21,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.reserva",
+        "pk": "27de904f-dfa3-4b4b-bf35-5f546f890225",
+        "fields": {
+            "anuncio": "9df8fad4-4890-4c3f-9b65-ab80e9cd1629",
+            "data_check_in": "2022-11-09",
+            "data_check_out": "2022-11-10",
+            "preco_total": 50,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 20,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.reserva",
+        "pk": "6714f1eb-1e32-442e-8e6a-52fc58d86143",
+        "fields": {
+            "anuncio": "89accb7a-c77a-4800-9be4-f858b570a7ae",
+            "data_check_in": "2022-11-11",
+            "data_check_out": "2022-11-12",
+            "preco_total": 40,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 19,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.reserva",
+        "pk": "6042cf85-4857-424d-b646-dce57a139170",
+        "fields": {
+            "anuncio": "89accb7a-c77a-4800-9be4-f858b570a7ae",
+            "data_check_in": "2022-11-13",
+            "data_check_out": "2022-11-14",
+            "preco_total": 30,
+            "comentario": "Desafio técnico da Seazone!",
+            "num_hospedes": 18,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      }
+  ]
