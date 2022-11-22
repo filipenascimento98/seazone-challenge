@@ -1,3 +1,4 @@
+from datetime import datetime
 from api.domain.base import DomainBase
 from api.data_access.imovel import ImovelRepository
 
@@ -5,6 +6,18 @@ from api.data_access.imovel import ImovelRepository
 class ImovelDomain(DomainBase):
     def __init__(self):
         super().__init__(ImovelRepository())
+    
+    def criar(self, dados):
+        data_ativacao = datetime.strptime(dados['data_ativacao'], "%d/%m/%Y")
+
+        try:
+            dados['data_ativacao'] = data_ativacao.strftime("%Y-%m-%d")
+            ret = self.repository.criar(dados)
+            self.repository.salvar(ret)
+        except Exception as e:
+            return ("Não foi possível adicionar o objeto a base de dados.", 500)
+        
+        return {"message": ret.pk, "status": 201}
 
     def atualizar(self, pk, dados):
         try:

@@ -12,4 +12,4 @@ class ImovelInputSerializer(serializers.Serializer):
     qtd_banheiro = serializers.IntegerField()
     permitido_animais = serializers.BooleanField()
     valor_limpeza = serializers.FloatField()
-    data_ativacao = serializers.DateField()
+    data_ativacao = serializers.DateField(format="%d/%m/%Y", input_formats=["%d/%m/%Y"])
