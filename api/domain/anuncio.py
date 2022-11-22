@@ -34,7 +34,7 @@ class AnuncioDomain(DomainBase):
             query_params = {"pk": pk}
             anuncio = self.repository.obter(query_params=query_params)
         except Exception as e:
-            return {"message": "Objeto não encontrado", "status": 400}
+            return ("Objeto não encontrado", 404)
         
         try:
             query_params = {"cd_imovel": dados.get('imovel', anuncio.imovel.pk)}
