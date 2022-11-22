@@ -30,7 +30,9 @@ class ImovelDomain(DomainBase):
         imovel.qtd_banheiro = dados.get('qtd_banheiro', imovel.qtd_banheiro)
         imovel.permitido_animais = dados.get('permitido_animais', imovel.permitido_animais)
         imovel.valor_limpeza = dados.get('valor_limpeza', imovel.valor_limpeza)
-        imovel.data_ativacao = dados.get('data_ativacao', imovel.data_ativacao)
+        if dados['data_ativacao']:
+            data_ativacao = datetime.strptime(dados['data_ativacao'], "%d/%m/%Y")
+            imovel.data_ativacao = data_ativacao.strftime("%Y-%m-%d")
 
         campos_alterados = []
         for key in dados:

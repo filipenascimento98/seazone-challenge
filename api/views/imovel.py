@@ -4,6 +4,7 @@ from api.domain.imovel import ImovelDomain
 from api.serializers.imovel import (
     ImovelOutputSerializer,
     ImovelInputSerializer,
+    ImovelUpdateSerializer
 )
 
 class ImovelView(viewsets.ViewSet):
@@ -53,7 +54,10 @@ class ImovelView(viewsets.ViewSet):
         return Response({"message": ret['message']}, status=ret['status'])
 
     def partial_update(self, request, pk=None):
-        ret = self.domain.atualizar(pk, request.data)
+        serializer = ImovelUpdateSerializer(data=request.data)
+
+        if serializer.is_valid(raise_exception=True):
+            ret = self.domain.atualizar(pk, request.data)
 
         if isinstance(ret, tuple):
             return Response({"message": ret[0]}, status=ret[1])
