@@ -10,6 +10,9 @@ class ImovelDomain(DomainBase):
     def criar(self, dados):
         data_ativacao = datetime.strptime(dados['data_ativacao'], "%d/%m/%Y")
 
+        if data_ativacao > datetime.now():
+            return ("A data de ativação não pode ser posterior a data atual", 422)
+
         try:
             dados['data_ativacao'] = data_ativacao.strftime("%Y-%m-%d")
             ret = self.repository.criar(dados)

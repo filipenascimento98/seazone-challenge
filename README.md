@@ -8,7 +8,7 @@ Nesse projeto temos a implementação de uma API como solução para o problema 
 - [Django REST Framework](https://www.django-rest-framework.org/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
-- Testes Automatizados
+- Testes Unitários
 
 # Instalação
 Para ter acesso a API basta clonar este repositório.
@@ -31,7 +31,7 @@ docker-compose up -d
 Assim, a aplicação será executada em um container Docker.
 
 # Rotas disponíveis
-Nessa API temos três entidades: __Car__, __CarOwner__ e __User__. A documentação das rotas pode ser acessada através do seguinte endpoint:
+Nessa API temos três entidades: __Imóvel__, __Anúncio__ e __Reserva__. A documentação das rotas pode ser acessada através do seguinte endpoint:
 
 ```bash
 url_base/swagger/
@@ -42,5 +42,5 @@ url_base/swagger/
 Para executar os testes automatizados navegue até o diretório onde se encontra o arquivo __manage.py__ e execute o seguinte comando:
 
 ```bash
-python manage.py test
+python manage.py test -b
 ```

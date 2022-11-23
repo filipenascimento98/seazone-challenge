@@ -65,7 +65,6 @@ class RepositoryBase:
         Returns:
         - obj: Objeto alterado.
         """
-        print("Atualizando o model")
         return obj.save(update_fields=dados_alterados)
     
     def excluir(self, obj):
