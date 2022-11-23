@@ -1,0 +1,35 @@
+[
+    {
+        "model": "api.anuncio",
+        "pk": "b03259be-fe4b-4d31-8bc1-7b808ff255b2",
+        "fields": {
+          "imovel": "0293c95f-2e48-4754-8719-455f6e1c4b07",
+          "nome_plataforma": "AirBnb",
+          "taxa_plataforma": 3,
+          "data_criacao": "2022-11-20",
+          "data_atualizacao": "2022-11-20"
+        }
+    },
+    {
+        "model": "api.anuncio",
+        "pk": "9df8fad4-4890-4c3f-9b65-ab80e9cd1629",
+        "fields": {
+            "imovel": "bb7f3407-64f6-44fb-9478-53fc4a7065d4",
+            "nome_plataforma": "OLX",
+            "taxa_plataforma": 2,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      },
+      {
+        "model": "api.anuncio",
+        "pk": "89accb7a-c77a-4800-9be4-f858b570a7ae",
+        "fields": {
+            "imovel": "83d03deb-03be-4c66-bea2-722e3556fc77",
+            "nome_plataforma": "Aluga Imóveis",
+            "taxa_plataforma": 1,
+            "data_criacao": "2022-11-20",
+            "data_atualizacao": "2022-11-20"
+        }
+      }
+  ]
