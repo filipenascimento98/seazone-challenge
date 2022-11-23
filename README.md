@@ -20,8 +20,8 @@ git clone https://github.com/filipenascimento98/seazone-challenge.git
 Esse projeto tem como dependência o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/). Com as dependências resolvidas, navegue até o diretório do projeto que contém o arquivo __docker_compose.yml__ e execute os seguintes comandos: 
 
 ```bash
-docker-compose run carford python manage.py makemigrations
-docker-compose run carford python manage.py migrate
+docker-compose run khanto python manage.py makemigrations
+docker-compose run khanto python manage.py migrate
 ```
 E esse outro comando que irá dar o build e colocar no ar a aplicação:
 ```bash
