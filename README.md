@@ -34,7 +34,7 @@ Assim, a aplicação será executada em um container Docker.
 Nessa API temos três entidades: __Imóvel__, __Anúncio__ e __Reserva__. A documentação das rotas pode ser acessada através do seguinte endpoint:
 
 ```bash
-url_base/swagger/
+{url_base}/swagger/
 ```
 
 # Testes automatizados
